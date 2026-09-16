@@ -9,3 +9,5 @@ $RECYCLE.BIN/
 # Office / Temp files
 ~$*
 *.tmp
+*.docx
+*.doc
