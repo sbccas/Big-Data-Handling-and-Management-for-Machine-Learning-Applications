@@ -13,6 +13,8 @@ practical_code: "2611001305033002"
 
 <div align="center">
 
+<img src="assets/social_banner.jpg" alt="DS-505 Big Data & Machine Learning" width="100%" style="border-radius: 12px; margin-bottom: 20px;" />
+
 # ⚡ DS-505: Big Data Handling & Management for Machine Learning
 
 ### *Bridging Distributed Big Data Computing and Next-Generation Generative AI*
@@ -27,7 +29,7 @@ practical_code: "2611001305033002"
 
 <p align="center">
   <b>Department of Computer Science & Data Science</b><br>
-  <b>Sheth B. C. Patel College of Computer Applications (SBCCAS)</b><br>
+  <b>Sutex Bank College of Computer Applications and Science (SBCCAS)</b><br>
   <i>Affiliated with Veer Narmad South Gujarat University (VNSGU), Surat, Gujarat, India</i>
 </p>
 
