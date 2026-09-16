@@ -190,6 +190,8 @@ result = classifier("Distributed computing with PySpark transforms raw informati
 print(result)
 # Output: [{'label': 'POSITIVE', 'score': 0.9998}]
 ```
+
+👉 **[📖 Read Complete Unit-4 Notes, Diagrams & Practical Lab Manual](2_Lecture_Notes/Unit-4_Introduction_to_Large_Language_Models_and_Big_Data_Applications.md)**
 </details>
 
 ---
@@ -203,10 +205,7 @@ print(result)
 │   └── 505 Big Data Handling...pdf
 │
 ├── 📂 2_Lecture_Notes/                  # Unit-wise slide decks, markdown summaries & Colab guides
-│   ├── Unit1_Introduction_BigData/
-│   ├── Unit2_Distributed_PySpark/
-│   ├── Unit3_DataPrep_ScikitLearn/
-│   └── Unit4_LLMs_HuggingFace/
+│   └── Unit-4_Introduction_to_Large_Language_Models_and_Big_Data_Applications.md
 │
 ├── 📂 3_Projects_Presentations/         # Capstone project guidelines, rubrics & student work
 │   ├── Project_Guidelines.md
