@@ -301,7 +301,7 @@ As future Data Scientists, leverage AI intelligently to debug distributed jobs a
 <div align="center">
 
 Made with 💙 for the **B.Sc. Data Science & Analytics** Students  
-**Sheth B. C. Patel College of Computer Applications (SBCCAS)**  
+**Sutex Bank College of Computer Applications and Science (SBCCAS)**  
 *Veer Narmad South Gujarat University (VNSGU), Surat*
 
 </div>
