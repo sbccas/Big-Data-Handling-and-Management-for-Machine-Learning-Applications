@@ -1,0 +1,11 @@
+# Windows system files
+desktop.ini
+Thumbs.db
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# Office / Temp files
+~$*
+*.tmp
