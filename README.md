@@ -212,10 +212,7 @@ print(result)
 │   └── Capstone_Templates/
 │
 ├── 📂 4_Assignments/                    # Problem statements, code deliverables & grading rubrics
-│   ├── Assignment1_Pandas_Optimization/
-│   ├── Assignment2_PySpark_Analytics/
-│   ├── Assignment3_ML_Pipeline/
-│   └── Assignment4_HuggingFace_LLM/
+│   └── Assignment-4_Unit-4_Theory_Assignment.md
 │
 ├── 📂 5_QuestionBank/                   # Question bank, MCQs, viva preparation & practical prompts
 │   ├── Theory_Question_Bank.md
