@@ -11,3 +11,6 @@ $RECYCLE.BIN/
 *.tmp
 *.docx
 *.doc
+
+# Reference samples from other subjects
+*204_ProgrammingSkills*
