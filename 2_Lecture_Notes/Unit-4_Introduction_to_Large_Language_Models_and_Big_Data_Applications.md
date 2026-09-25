@@ -10,35 +10,40 @@
 ---
 
 <details open>
-<summary><b>📑 Table of Contents & Unit Overview (Click to Expand/Collapse)</b></summary>
+<summary><b>📑 Table of Contents & Unit Roadmap (Click to Expand / Collapse)</b></summary>
 
-- 4.1 Introduction to LLM:
-  - 4.1.1 Concept of Large Language Models
-  - 4.1.2 Examples of LLM applications (chatbots, text summarization)
-  - 4.1.3 Importance of Large Datasets for LLM Training
-- 4.2 Text Data Processing:
-  - 4.2.1 Working with Large Text Datasets
-  - 4.2.2 Tokenization and Text Cleaning
-  - 4.2.3 Basic Natural Language Processing (NLP) Concepts
-- 4.3 Using Pretrained LLM APIs:
-  - 4.3.1 Introduction to Hugging Face
-  - 4.3.2 Using APIs for Text Generation
-  - 4.3.3 Ethical Considerations in AI Systems
-- 4.4 Practical Implementation & Functions:
-  - 4.4.1 Installation of transformers
-  - 4.4.2 Text Processing using Python : split(), lower(), replace(), count()
-
-**Extras & Practical Labs:**
-
-  - 4.4.3 Integrated Text Processing Pipelines
-  - 4.4.4 Live Demonstrations: Hugging Face transformers
+- [4.1 Introduction to Large Language Models (LLMs)](#41-introduction-to-large-language-models-llms)
+  - [4.1.1 Concept of Large Language Models](#411-concept-of-large-language-models)
+  - [4.1.2 Examples of LLM Applications (Chatbots, Text Summarization)](#412-examples-of-llm-applications-chatbots-text-summarization)
+  - [4.1.3 Importance of Large Datasets for LLM Training](#413-importance-of-large-datasets-for-llm-training)
+- [4.2 Text Data Processing](#42-text-data-processing)
+  - [4.2.1 Working with Large Text Datasets](#421-working-with-large-text-datasets)
+  - [4.2.2 Tokenization and Text Cleaning](#422-tokenization-and-text-cleaning)
+  - [4.2.3 Basic Natural Language Processing (NLP) Concepts](#423-basic-natural-language-processing-nlp-concepts)
+- [4.3 Using Pretrained LLM APIs](#43-using-pretrained-llm-apis)
+  - [4.3.1 Introduction to Hugging Face & Pretrained LLMs](#431-introduction-to-hugging-face--pretrained-llms)
+  - [4.3.2 Using APIs for Text Generation](#432-using-apis-for-text-generation)
+  - [4.3.3 Ethical Considerations in AI Systems](#433-ethical-considerations-in-ai-systems)
+- [4.4 Practical Implementation & Functions](#44-practical-implementation--functions)
+  - [4.4.1 Installation of Transformers](#441-installation-of-transformers)
+  - [4.4.2 Text Processing using Python: split(), lower(), replace(), count()](#442-text-processing-using-python-split-lower-replace-count)
+  - [4.4.3 Integrated Text Processing Pipelines](#443-integrated-text-processing-pipelines)
+  - [4.4.4 Live Demonstrations: Hugging Face Transformers](#444-live-demonstrations-hugging-face-transformers)
+- [5. Comprehensive Examination Preparation](#5-comprehensive-examination-preparation)
+  - [5.1 Key Terminology Glossary](#51-key-terminology-glossary)
+  - [5.2 Short-Answer Questions & Model Answers](#52-short-answer-questions--model-answers-2-to-3-marks-each)
+  - [5.3 Long-Answer Questions & Model Theory Answers](#53-long-answer-questions--model-theory-answers-5-to-7-marks-each)
+  - [5.4 Practical Viva Voce & Laboratory Exam Questions](#54-practical-viva-voce--laboratory-exam-questions)
+- [6. Student Assignment & Lab Worksheet](#6-student-assignment--lab-worksheet)
 
 </details>
 
 ---
 
-## 4.1: Introduction to Large Language Models (LLMs)
+<a id="41-introduction-to-large-language-models-llms"></a>
+## 4.1 Introduction to Large Language Models (LLMs)
 
+<a id="411-concept-of-large-language-models"></a>
 ### 4.1.1 Concept of Large Language Models
 
 A **Language Model (LM)** is a statistical or computational model designed to estimate the probability distribution over sequences of words. It learns syntactic and semantic regularities in human communication to predict missing, subsequent, or related linguistic components.
@@ -145,7 +150,9 @@ Students do not need to learn the mathematical equations of attention at this st
 
 Attention helps an LLM understand relationships between different parts of the input text.
 
-### **4.1.2 Examples of LLM Applications**
+<a id="412-examples-of-llm-applications-chatbots-text-summarization"></a>
+<a id="412-examples-of-llm-applications"></a>
+### 4.1.2 Examples of LLM Applications (Chatbots, Text Summarization)
 
 LLMs are not limited to chat. They can be used in many applications involving language.
 
@@ -254,6 +261,7 @@ Positive
   <img src="media/image3.png" alt="Diagram" style="max-width: 95%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);" />
 </p>
 
+<a id="413-importance-of-large-datasets-for-llm-training"></a>
 ### 4.1.3 Importance of Large Datasets for LLM Training
 
 This is an important connection between Big Data and LLMs.
@@ -327,7 +335,8 @@ Big Data and LLMs — The Connection
   <img src="media/image5.png" alt="Diagram" style="max-width: 95%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);" />
 </p>
 
-## **4.2 Text Data Processing**
+<a id="42-text-data-processing"></a>
+## 4.2 Text Data Processing
 
 ### **4.2.****0** **Introduction to Text Data**
 
@@ -346,7 +355,8 @@ Examples:
 - Student feedback
 Unlike a numerical dataset, text data is usually unstructured or semi-structured.
 
-### **4.2.1 Working with Large Text Datasets**
+<a id="421-working-with-large-text-datasets"></a>
+### 4.2.1 Working with Large Text Datasets
 
 In real-world applications, text datasets can become very large.
 
@@ -429,7 +439,8 @@ Text may be:
 - abbreviated.
 Therefore, text processing is an important step before applying NLP or LLM techniques.
 
-### **4.2.2 Tokenization and Text Cleaning**
+<a id="422-tokenization-and-text-cleaning"></a>
+### 4.2.2 Tokenization and Text Cleaning
 
 **A. Tokenization**
 
@@ -591,7 +602,9 @@ Consider:
 
 So the overall process is: Raw Text -> Cleaning -> Clean Text -> Tokenization -> Tokens
 
-### **4.2.3 Basic Natural Language Processing Concepts**
+<a id="423-basic-natural-language-processing-nlp-concepts"></a>
+<a id="423-basic-natural-language-processing-concepts"></a>
+### 4.2.3 Basic Natural Language Processing (NLP) Concepts
 
 **What is NLP?**
 
@@ -802,7 +815,13 @@ The following diagram summarizes the complete process students should remember:
   <img src="media/image7.png" alt="Diagram" style="max-width: 95%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);" />
 </p>
 
-### **4.3.1 Introduction to Pretrained LLMs**
+<a id="43-using-pretrained-llm-apis"></a>
+## 4.3 Using Pretrained LLM APIs
+
+<a id="431-introduction-to-hugging-face--pretrained-llms"></a>
+<a id="431-introduction-to-hugging-face"></a>
+<a id="431-introduction-to-pretrained-llms"></a>
+### 4.3.1 Introduction to Hugging Face & Pretrained LLMs
 
 **What is a Pretrained Model?**
 
@@ -899,7 +918,8 @@ A pipeline can be used for different tasks.
 
 Pipeline = Easy interface for using a pretrained model.
 
-### **4.3.2 Using APIs for Text Generation**
+<a id="432-using-apis-for-text-generation"></a>
+### 4.3.2 Using APIs for Text Generation
 
 What is an API?
 
@@ -1120,7 +1140,8 @@ Transformers = Library for working with models
 
 API = Communication method for accessing a model/service
 
-### **4.3.3 Ethical Considerations in AI Systems**
+<a id="433-ethical-considerations-in-ai-systems"></a>
+### 4.3.3 Ethical Considerations in AI Systems
 
 LLMs are powerful, but they should be used responsibly.
 
@@ -1217,9 +1238,12 @@ Pretrained Model → Prompt → API / Pipeline → LLM → Generated Output → 
 
 The main advantage of pretrained models is that we can use an already-trained model instead of building and training a large model from scratch.
 
-## **4.4 Practical Implementation and Important Functions**
+<a id="44-practical-implementation--functions"></a>
+<a id="44-practical-implementation-and-functions"></a>
+## 4.4 Practical Implementation & Functions
 
-### **4.4.1 Installation of Transformers**
+<a id="441-installation-of-transformers"></a>
+### 4.4.1 Installation of Transformers
 
 **What is Transformers?**
 
@@ -1327,7 +1351,9 @@ that allows computers to learn patterns from data..
 
 > 💡 ****Note:** The exact output may be different because the model generates text based on its learned patterns and generation settings.**
 
-### **4.4.2 Text Processing Using Python**
+<a id="442-text-processing-using-python-split-lower-replace-count"></a>
+<a id="442-text-processing-using-python"></a>
+### 4.4.2 Text Processing using Python: split(), lower(), replace(), count()
 
 Before using NLP or LLM techniques, we often need to perform basic text processing.
 
@@ -1501,6 +1527,9 @@ Output:
 
 2
 
+<a id="443-integrated-text-processing-pipelines"></a>
+### 4.4.3 Integrated Text Processing Pipelines
+
 **Combining All Four Functions**
 
 The real benefit comes when we combine these functions.
@@ -1637,7 +1666,8 @@ Python occurs: 2 times.
   <img src="media/image18.jpeg" alt="Diagram" style="max-width: 95%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);" />
 </p>
 
-Extra 4.4.4 Live Demonstrations: Hugging Face transformers
+<a id="444-live-demonstrations-hugging-face-transformers"></a>
+### 4.4.4 Live Demonstrations: Hugging Face Transformers
 
 Note for Practical Labs: The scripts below can be executed inside Google Colab using a standard CPU or free T4 GPU environment.
 
@@ -1699,9 +1729,11 @@ print(generation_output[0]['generated_text'])
 
 ```
 
+<a id="5-comprehensive-examination-preparation"></a>
 ## 5. Comprehensive Examination Preparation
 
-## 5.1 Key Terminology Glossary
+<a id="51-key-terminology-glossary"></a>
+### 5.1 Key Terminology Glossary
 
 | Term | Exact Technical Definition |
 | --- | --- |
@@ -1718,7 +1750,9 @@ print(generation_output[0]['generated_text'])
 | Transformers | The Python library implementing Transformer-based architectures with standard APIs. |
 | Hallucination | When an LLM generates plausibly phrased but factually inaccurate or unsubstantiated text. |
 
-## 5.2 Short-Answer Questions & Model Answers (2 to 3 Marks Each)
+<a id="52-short-answer-questions--model-answers-2-to-3-marks-each"></a>
+<a id="52-short-answer-questions--model-answers"></a>
+### 5.2 Short-Answer Questions & Model Answers (2 to 3 Marks Each)
 
 #### ❓ Q1: What is a Large Language Model (LLM)?
 
@@ -1730,13 +1764,16 @@ print(generation_output[0]['generated_text'])
 
 #### ❓ Q5: Why is lower() commonly used in text cleaning pipelines?
 
-## 5.3 Long-Answer Questions & Model Theory Answers (5 to 7 Marks Each)
+<a id="53-long-answer-questions--model-theory-answers-5-to-7-marks-each"></a>
+<a id="53-long-answer-questions--model-theory-answers"></a>
+### 5.3 Long-Answer Questions & Model Theory Answers (5 to 7 Marks Each)
 
 #### ❓ Q1: Explain the relationship between Big Data and Large Language Models. Why are large datasets essential for LLM training?
 
 #### ❓ Q2: Discuss major ethical concerns associated with Large Language Models and AI systems. Provide an illustrative scenario for algorithmic bias.
 
-## 5.4 Practical Viva Voce & Laboratory Exam Questions
+<a id="54-practical-viva-voce--laboratory-exam-questions"></a>
+### 5.4 Practical Viva Voce & Laboratory Exam Questions
 
 #### ❓ Q: What is the return type of the Python string .split() function?
 A: It returns a Python list of strings.
@@ -1762,6 +1799,7 @@ A: Subword tokenization limits vocabulary size while avoiding out-of-vocabulary 
 #### ❓ 🔹 Q: What is the difference between greedy decoding and nucleus sampling in text generation?
 A: Greedy decoding always picks the single highest-probability token (deterministic and prone to loops), whereas nucleus (top-) sampling dynamically samples from candidates whose cumulative probability reaches threshold .
 
+<a id="6-student-assignment--lab-worksheet"></a>
 ## 6. Student Assignment & Lab Worksheet
 
 Theoretical Assignment Tasks
