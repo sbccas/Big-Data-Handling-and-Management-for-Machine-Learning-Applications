@@ -39,14 +39,10 @@
   - [4.1 Ingestion Primitives: `read_csv()`, `read_json()`](#41-ingestion-primitives-read_csv-read_json)
   - [4.2 Structural Inspection: `head()`, `tail()`, `info()`, `describe()`, `shape`, `columns`](#42-structural-inspection-head-tail-info-describe-shape-columns)
   - [4.3 Data Cleaning & Wrangling: `drop()`, `dropna()`, `fillna()`, `rename()`](#43-data-cleaning--wrangling-drop-dropna-fillna-rename)
-- [5. Comprehensive Guided Laboratory Case Study](#5-comprehensive-guided-laboratory-case-study)
-  - [Lab Walkthrough: Ingesting and Optimizing a Multi-Million Row Dataset](#lab-walkthrough-ingesting-and-optimizing-a-multi-million-row-dataset)
-- [6. University Examination Preparation Vault](#6-university-examination-preparation-vault)
-  - [6.1 High-Yield Technical Glossary (15 Core Definitions)](#61-high-yield-technical-glossary-15-core-definitions)
-  - [6.2 Short Answer Model Questions (2 to 3 Marks Each)](#62-short-answer-model-questions-2-to-3-marks-each)
-  - [6.3 Long Answer Comprehensive Theory Questions (5 to 7 Marks Each)](#63-long-answer-comprehensive-theory-questions-5-to-7-marks-each)
-  - [6.4 Practical Examination Viva Voce Q&A](#64-practical-examination-viva-voce-qa)
-- [7. Student Assignment & Lab Worksheet](#7-student-assignment--lab-worksheet)
+- [5. Practical Projects, Assignments & University Exam Resources](#5-practical-projects-assignments--university-exam-resources)
+  - [5.1 Hands-on Practical Project & Guided Lab](#-1-hands-on-practical-project--guided-lab)
+  - [5.2 Theory Assignment 1 & MCQ Practice](#-2-theory-assignment-1--mcq-practice-continuous-evaluation)
+  - [5.3 University Examination Vault, Technical Glossary & Viva Voce](#-3-university-examination-vault-technical-glossary--viva-voce)
 
 </details>
 
@@ -620,256 +616,26 @@ df_renamed = df.rename(columns={
 
 ---
 
-# 5. Comprehensive Guided Laboratory Case Study
-
-## Lab Walkthrough: Ingesting and Optimizing a Multi-Million Row Dataset
-
-In this complete end-to-end practical walkthrough, we demonstrate how an enterprise analytics script processes a simulated large dataset.
-
-```python
-"""
-=============================================================================
-DS-505 UNIT 1: COMPLETE PRACTICAL LABORATORY PIPELINE
-Topic: Enterprise Data Ingestion, Inspection, Memory Profiling & Optimization
-=============================================================================
-"""
-import pandas as pd
-import numpy as np
-import os
-
-# --- STEP 1: GENERATE SYNTHETIC TELECOM TELEMETRY DATA (500,000 ROWS) ---
-print("[INFO] Generating synthetic dataset on disk...")
-np.random.seed(101)
-records = 500_000
-
-raw_data = pd.DataFrame({
-    'CustomerID': np.random.randint(1000000, 9999999, size=records),
-    'CallDurationMinutes': np.random.uniform(0.5, 120.0, size=records),
-    'PlanType': np.random.choice(['Prepaid', 'Postpaid', 'Enterprise', 'Student'], size=records),
-    'PaymentMethod': np.random.choice(['CreditCard', 'UPI', 'NetBanking', 'Cash'], size=records),
-    'DataConsumedGB': np.random.uniform(0.1, 50.0, size=records),
-    'ChurnStatus': np.random.choice([0, 1], size=records, p=[0.85, 0.15])
-})
-
-# Inject real-world data issues (Missing values)
-nan_indices = np.random.choice(records, size=15000, replace=False)
-raw_data.loc[nan_indices, 'DataConsumedGB'] = np.nan
-
-csv_filename = "telecom_customer_telemetry.csv"
-raw_data.to_csv(csv_filename, index=False)
-file_size_mb = os.path.getsize(csv_filename) / (1024**2)
-print(f"[SUCCESS] CSV created: {csv_filename} ({file_size_mb:.2f} MB on disk)\n")
-
-# --- STEP 2: INGESTION WITH METRIC PROFILING ---
-print("--- [STEP 2: DEFAULT INGESTION & MEMORY AUDIT] ---")
-df_naive = pd.read_csv(csv_filename)
-
-print("Dataset Shape:", df_naive.shape)
-print("\nFirst 3 Records:")
-print(df_naive.head(3))
-
-# Audit Deep Memory Footprint
-naive_ram_usage = df_naive.memory_usage(deep=True).sum() / (1024**2)
-print(f"\nDefault RAM Allocation: {naive_ram_usage:.2f} MB")
-print("\nData Types (Pre-Optimization):")
-print(df_naive.dtypes)
-
-# --- STEP 3: DATA HYGIENE (MISSING VALUES & CLEANING) ---
-print("\n--- [STEP 3: CLEANING & IMPUTATION] ---")
-print("Missing values per column before cleaning:")
-print(df_naive.isna().sum())
-
-# Impute continuous numeric feature using median
-median_data_usage = df_naive['DataConsumedGB'].median()
-df_naive['DataConsumedGB'].fillna(median_data_usage, inplace=True)
-print(f"[CLEAN] Imputed missing DataConsumedGB with median: {median_data_usage:.2f} GB")
-
-# Rename column headers to standardized conventions
-df_naive.rename(columns={
-    'CustomerID': 'customer_id',
-    'CallDurationMinutes': 'call_duration_min',
-    'PlanType': 'plan_type',
-    'PaymentMethod': 'payment_method',
-    'DataConsumedGB': 'data_consumed_gb',
-    'ChurnStatus': 'churn_flag'
-}, inplace=True)
-
-# --- STEP 4: MEMORY SURGERY (OPTIMIZATION & DOWNCASTING) ---
-print("\n--- [STEP 4: APPLYING TYPE DOWNCASTING] ---")
-df_optimized = df_naive.copy()
-
-# Downcast 64-bit floats to 32-bit floats
-df_optimized['call_duration_min'] = df_optimized['call_duration_min'].astype('float32')
-df_optimized['data_consumed_gb'] = df_optimized['data_consumed_gb'].astype('float32')
-
-# Downcast binary target integer to int8
-df_optimized['churn_flag'] = df_optimized['churn_flag'].astype('int8')
-
-# Downcast customer ID to 32-bit unsigned int
-df_optimized['customer_id'] = pd.to_numeric(df_optimized['customer_id'], downcast='unsigned')
-
-# Convert low-cardinality string objects into categorical representations
-df_optimized['plan_type'] = df_optimized['plan_type'].astype('category')
-df_optimized['payment_method'] = df_optimized['payment_method'].astype('category')
-
-optimized_ram_usage = df_optimized.memory_usage(deep=True).sum() / (1024**2)
-ram_saved_pct = ((naive_ram_usage - optimized_ram_usage) / naive_ram_usage) * 100
-
-print(f"Optimized RAM Allocation: {optimized_ram_usage:.2f} MB")
-print(f"Total Memory Saved:       {ram_saved_pct:.2f}%")
-print("\nData Types (Post-Optimization):")
-print(df_optimized.dtypes)
-
-# --- STEP 5: CLEANUP SCRATCH DISK ---
-if os.path.exists(csv_filename):
-    os.remove(csv_filename)
-    print(f"\n[INFO] Cleaned temporary lab file from disk.")
-```
-
-**Execution Output Summary:**
-```text
-[INFO] Generating synthetic dataset on disk...
-[SUCCESS] CSV created: telecom_customer_telemetry.csv (27.84 MB on disk)
-
---- [STEP 2: DEFAULT INGESTION & MEMORY AUDIT] ---
-Dataset Shape: (500000, 6)
-Default RAM Allocation: 77.25 MB
-
---- [STEP 3: CLEANING & IMPUTATION] ---
-Missing values per column: DataConsumedGB: 15000
-[CLEAN] Imputed missing DataConsumedGB with median: 25.04 GB
-
---- [STEP 4: APPLYING TYPE DOWNCASTING] ---
-Optimized RAM Allocation: 10.49 MB
-Total Memory Saved:       86.42%
-```
-
 ---
 
-# 6. University Examination Preparation Vault
+# 5. Practical Projects, Assignments & University Exam Resources
 
-This vault contains model theory answers, definitions, and viva voce questions designed for VNSGU end-semester exams.
+To support focused study and keep lecture notes streamlined for reading and revision, practical lab walkthroughs, institutional assignments, and exam vaults are organized in dedicated repository sections:
 
----
+### 🚀 1. Hands-on Practical Project & Guided Lab
+* **Project Document:** [`3_Projects_Presentations/Unit-1_Lab_Case_Study_Large_Dataset_Optimization.md`](../3_Projects_Presentations/Unit-1_Lab_Case_Study_Large_Dataset_Optimization.md)
+* **Focus:** Complete Python walkthrough processing 500,000 telemetry records on disk, deep memory profiling, cleaning, median imputation, and achieving an **86.42% RAM reduction** via type downcasting and dictionary categorical encoding.
 
-## 6.1 High-Yield Technical Glossary (15 Core Definitions)
+### 📝 2. Theory Assignment 1 & MCQ Practice (Continuous Evaluation)
+* **Assignment Document:** [`4_Assignments/Assignment-1_Unit-1_Theory_Assignment.md`](../4_Assignments/Assignment-1_Unit-1_Theory_Assignment.md)
+* **Focus:** Official college assignment format prepared by Asst. Prof. Hitesh Patel. Includes:
+  * **Section I:** 5 Detailed Long Questions (7 Marks each)
+  * **Section II:** 5 Focused Short Questions (3 Marks each)
+  * **Section III:** 7 Multiple Choice Questions (MCQs) with Answer Keys and Technical Justifications.
 
-| # | Technical Term | Exact University Examination Definition |
-| :-: | :--- | :--- |
-| **1** | **Big Data** | Datasets characterized by high Volume, Velocity, Variety, Veracity, and Value that cannot be stored or analyzed using traditional single-node RDBMS systems. |
-| **2** | **Volume** | The scale of data generation and storage, typically quantified in Terabytes, Petabytes, and Exabytes. |
-| **3** | **Velocity** | The rate at which new data is generated, ingested, and processed, demanding real-time or streaming analysis. |
-| **4** | **Variety** | The multi-structural nature of modern datasets across structured, semi-structured, and unstructured formats. |
-| **5** | **Veracity** | The degree of reliability, quality, and trustworthiness of data, requiring cleaning to remove noise and anomalies. |
-| **6** | **Value** | The actionable business or predictive insight extracted from data through statistical analysis and machine learning. |
-| **7** | **Vertical Scaling** | Adding more hardware resources (RAM, CPU cores, SSD capacity) to a single existing server ("scale-up"). |
-| **8** | **Horizontal Scaling** | Connecting multiple commodity servers together in a cluster to share storage and computing loads ("scale-out"). |
-| **9** | **Schema-on-Read** | A storage pattern where raw data is stored without applying structure until it is extracted and read by an application. |
-| **10** | **Vectorization** | Performing operations across entire arrays simultaneously using low-level compiled code, eliminating slow Python `for` loops. |
-| **11** | **SIMD** | *Single Instruction, Multiple Data*; CPU hardware architecture enabling one machine instruction to process multiple data points in parallel. |
-| **12** | **Chunking** | Partitioning a massive disk file into smaller row subsets to stream through RAM incrementally via the `chunksize` parameter. |
-| **13** | **Downcasting** | Converting high-precision data types (e.g., `int64`, `float64`) to smaller representations (e.g., `int16`, `float32`) to reduce memory. |
-| **14** | **Categorical Dtype** | A Pandas memory optimization technique that encodes repetitive string columns into integer codes with an internal dictionary lookup. |
-| **15** | **EDA** | *Exploratory Data Analysis*; the systematic methodology of summarizing main dataset characteristics through numerical and visual diagnostics. |
-
----
-
-## 6.2 Short Answer Model Questions (2 to 3 Marks Each)
-
-#### Q1: Differentiate between Horizontal Scaling and Vertical Scaling.
-> **Model Answer:**  
-> * **Vertical Scaling (Scale-Up):** Increasing computing capacity by adding more RAM, faster CPUs, or bigger disks to a **single machine**. *Limitation:* It has an absolute physical hardware ceiling and becomes prohibitively expensive.  
-> * **Horizontal Scaling (Scale-Out):** Increasing computing capacity by adding **more commodity computers (nodes)** into a distributed cluster (e.g., Hadoop, Spark). *Advantage:* Highly cost-effective and provides virtually unlimited scale.
-
-#### Q2: What causes the Out-Of-Memory (OOM) error in Pandas when loading large files?
-> **Model Answer:**  
-> The OOM error occurs because of **Memory Amplification**:
-> 1. Pandas defaults to 64-bit numerical types (`int64`, `float64`), consuming 8 bytes per cell regardless of value size.
-> 2. Text columns default to `object` dtypes, storing individual 64-bit memory pointers to fragmented Python string objects.
-> 3. A CSV file occupying 1 GB on disk often requires 3 GB to 5 GB of RAM when unpacked into memory, exceeding system limits.
-
-#### Q3: What is the functional role of the `chunksize` parameter in `pd.read_csv()`?
-> **Model Answer:**  
-> When `chunksize=N` is specified, `pd.read_csv()` does not read the entire file at once into a DataFrame. Instead, it returns an **iterable `TextFileReader` object** that yields DataFrames of $N$ rows per iteration. This allows data scientists to process arbitrarily large files out-of-core on low-RAM machines.
-
-#### Q4: Why is Apache Parquet preferred over CSV for Big Data storage?
-> **Model Answer:**  
-> 1. **Columnar Storage:** Parquet reads only the columns required by a query, whereas CSV must scan every byte on disk.
-> 2. **High Compression:** Built-in Snappy/Gzip compression reduces disk footprints by up to 80%.
-> 3. **Preserves Schema:** Embedded metadata preserves exact data types, avoiding parsing errors on load.
-
-#### Q5: What is the difference between `df.dropna(how='any')` and `df.dropna(how='all')`?
-> **Model Answer:**  
-> * `df.dropna(how='any')`: Drops a row if **at least one** column contains a missing value (`NaN`).
-> * `df.dropna(how='all')`: Drops a row **only if all** columns in that row are simultaneously `NaN`.
-
----
-
-## 6.3 Long Answer Comprehensive Theory Questions (5 to 7 Marks Each)
-
-#### Q1: Explain the 5 Vs of Big Data with neat illustrative examples. Discuss the limitations of traditional databases in managing them.
-*(Full detailed answer incorporating Section 1.2 definitions, 5Vs diagram, and Section 1.5 comparison table).*
-
-#### Q2: Explain the Python memory model when handling large datasets. Detail three proven techniques to optimize RAM consumption in Pandas.
-> **Structure of a 7-Mark Model Answer:**
-> 1. **Introduction to Memory Amplification:** Explain why disk size $\neq$ RAM footprint (object overhead, pointer fragmentation).
-> 2. **Technique 1 — Numerical Downcasting:** Explain switching from `float64` to `float32` (saving 50%) and `int64` to `int16`/`int32` via `pd.to_numeric(..., downcast='...')`.
-> 3. **Technique 2 — Categorical Encoding:** Explain converting repetitive string `object` columns to `category` dtype via dictionary encoding.
-> 4. **Technique 3 — Selective Column Loading (`usecols`):** Discard unneeded columns at the disk reading stage.
-> 5. **Include Code Demo:** Show before-and-after memory usage snippet demonstrating 80%+ savings.
-
-#### Q3: Compare Structured, Semi-Structured, and Unstructured Data. Provide industrial use cases and storage solutions for each.
-*(Full detailed answer incorporating Section 1.2 Variety table and real-world examples).*
-
-#### Q4: Detail the architecture and operation of Chunked Data Processing using Pandas. Explain how global aggregates (mean, sum, count) are computed across chunks.
-*(Full detailed answer incorporating Section 2.5 Sequence diagram, accumulator pattern, and practical code).*
-
----
-
-## 6.4 Practical Examination Viva Voce Q&A
-
-1. **Q: Does `df.drop('col_name', axis=1)` modify the original DataFrame by default?**  
-   *A:* No. By default, it returns a new modified DataFrame copy. To mutate in place, you must pass `inplace=True`.
-2. **Q: Why should you pass `memory_usage='deep'` when calling `df.info()`?**  
-   *A:* Without `deep=True`, Pandas reports estimated memory based on pointer arrays alone. `deep=True` forces Pandas to walk through memory and inspect the real bytes allocated to string objects.
-3. **Q: What is the output of `df.shape` on a dataset with 50,000 rows and 12 columns?**  
-   *A:* A Python tuple: `(50000, 12)`.
-4. **Q: Can `np.nan` be compared directly using `x == np.nan`?**  
-   *A:* No. IEEE floating-point standard dictates that `NaN` is not equal to anything, including itself. You must use `np.isnan(x)` or `pd.isna(x)`.
-5. **Q: When reading a JSON file with one JSON document per line, which argument must be set in `pd.read_json()`?**  
-   *A:* `lines=True`.
-
----
-
-# 7. Student Assignment & Lab Worksheet
-
-```text
-=============================================================================
-SUTEX BANK COLLEGE OF COMPUTER APPLICATIONS & SCIENCE (SBCCAS), AMROLI
-B.Sc. (Data Science & Analytics) — Semester V
-Course: DS-505 Big Data Handling & Management for Machine Learning
-=============================================================================
-```
-
-### 🧪 Lab Task 1: Memory Profiling and Downcasting Challenge
-1. Create a synthetic DataFrame containing 200,000 records with at least:
-   * Two continuous floating-point variables
-   * One identifier integer
-   * Two low-cardinality text columns (e.g., City, Department)
-2. Measure and print the baseline memory consumption using `df.memory_usage(deep=True)`.
-3. Downcast numeric columns and convert text columns to `category`.
-4. Calculate and display the percentage reduction in memory.
-
-### 🧪 Lab Task 2: Chunked Processing with Custom Aggregations
-1. Generate or download a CSV file with at least 100,000 transaction records.
-2. Using `pd.read_csv()` with `chunksize=20000`, compute the **weighted average sales amount** across all chunks without loading the entire dataset into memory at once.
-3. Verify that your streaming result exactly matches the global batch average.
-
-### 🧪 Lab Task 3: Missing Value Treatment Pipeline
-1. Load a dataset containing missing values in both numerical and categorical columns.
-2. Impute numerical columns with their respective median values.
-3. Impute categorical columns with the most frequent value (mode) or string `'Unknown'`.
-4. Drop columns that have more than 40% missing data.
+### 💡 3. University Examination Vault, Technical Glossary & Viva Voce
+* **Question Bank Document:** [`5_QuestionBank/Unit-1_Question_Bank_and_Viva_Voce.md`](../5_QuestionBank/Unit-1_Question_Bank_and_Viva_Voce.md)
+* **Focus:** 15 High-yield definitions, 7-mark long answer structural outlines, and 10 practical exam viva voce questions with model answers.
 
 ---
 
@@ -880,3 +646,4 @@ Made with 💙 for the **B.Sc. Data Science & Analytics** Students
 *Veer Narmad South Gujarat University (VNSGU), Surat*
 
 </div>
+

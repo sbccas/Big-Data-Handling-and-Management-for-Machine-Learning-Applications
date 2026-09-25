@@ -211,15 +211,14 @@ print(result)
 │   └── Unit-4_Introduction_to_Large_Language_Models_and_Big_Data_Applications.md
 │
 ├── 📂 3_Projects_Presentations/         # Capstone project guidelines, rubrics & student work
-│   ├── Project_Guidelines.md
-│   └── Capstone_Templates/
+│   └── Unit-1_Lab_Case_Study_Large_Dataset_Optimization.md
 │
 ├── 📂 4_Assignments/                    # Problem statements, code deliverables & grading rubrics
+│   ├── Assignment-1_Unit-1_Theory_Assignment.md
 │   └── Assignment-4_Unit-4_Theory_Assignment.md
 │
 ├── 📂 5_QuestionBank/                   # Question bank, MCQs, viva preparation & practical prompts
-│   ├── Theory_Question_Bank.md
-│   └── Practical_Lab_Exam_Prompts.md
+│   └── Unit-1_Question_Bank_and_Viva_Voce.md
 │
 ├── 📂 6_eBooks_ExtraResources/          # Reference guides, cheat sheets, papers & textbook links
 │   └── DECAP456_INTRODUCTION_TO_BIG_DATA.pdf
