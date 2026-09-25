@@ -113,6 +113,8 @@ for chunk in chunk_iterator:
     processed_data = chunk.dropna().astype({"sensor_id": "category"})
     # Stream downstream directly to feature storage
 ```
+
+👉 **[📖 Read Complete Unit-1 Notes, Diagrams & Practical Lab Manual](2_Lecture_Notes/Unit-1_Introduction_to_Big_Data_and_Large_Dataset_Handling.md)**
 </details>
 
 <details open>
@@ -205,6 +207,7 @@ print(result)
 │   └── 505 Big Data Handling...pdf
 │
 ├── 📂 2_Lecture_Notes/                  # Unit-wise slide decks, markdown summaries & Colab guides
+│   ├── Unit-1_Introduction_to_Big_Data_and_Large_Dataset_Handling.md
 │   └── Unit-4_Introduction_to_Large_Language_Models_and_Big_Data_Applications.md
 │
 ├── 📂 3_Projects_Presentations/         # Capstone project guidelines, rubrics & student work
