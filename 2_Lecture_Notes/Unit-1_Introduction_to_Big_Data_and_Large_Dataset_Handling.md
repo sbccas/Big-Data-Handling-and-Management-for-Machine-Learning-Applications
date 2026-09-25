@@ -56,12 +56,37 @@
 
 ## 1.1 What is Big Data?
 
-In modern data science, **Big Data** is defined not merely by file size, but by an operational threshold:
+In modern data science, **Big Data** is defined not merely by large file size, but by an operational threshold: when a dataset becomes too large, too fast, or too complex for standard software tools to handle on a single computer.
 
-> **Formal Definition:**  
-> *Big Data refers to data assets whose volume, velocity, variety, and complexity exceed the storage capacity, processing capability, or memory architecture of conventional database software tools (such as relational database management systems - RDBMS) and single-machine computational systems.*
+### 🎯 Authoritative Academic Definitions (For University Exams)
 
-As described by Nathan Marz in *Big Data: Principles and Best Practices of Scalable Systems*, Big Data represents a fundamental change in computational philosophy: when data scales beyond a single system's random-access memory (RAM) or disk bandwidth, computing architectures must shift from **vertical scaling (scale-up)** to **horizontal scaling (scale-out)** and streaming/chunked processing.
+Students should memorize at least one of these formal definitions for theory examinations:
+
+1. **Gartner (Doug Laney's 3V Definition):**
+   > *"Big Data is high-volume, high-velocity, and/or high-variety information assets that demand cost-effective, innovative forms of information processing that enable enhanced insight, decision making, and process automation."*
+
+2. **McKinsey Global Institute Definition:**
+   > *"Big data refers to datasets whose size is beyond the ability of typical database software tools to capture, store, manage, and analyze."*
+
+3. **Academic Definition (*DECAP456 Course Reference*):**
+   > *"Big Data is a collection of massive, complex, and heterogeneous datasets—spanning high volume, rapidly arriving velocity, and diverse structural varieties—that cannot be stored, managed, or processed efficiently using traditional relational database management systems (RDBMS)."*
+
+---
+
+### 💡 Intuitive Student Analogy: The Kitchen Counter vs. The Warehouse
+
+To understand Big Data and Python memory without getting confused:
+
+* **System RAM (Memory) = Your Kitchen Cooking Counter:**  
+  It is ultra-fast and directly reachable by the chef (the CPU). However, space is strictly limited (e.g., 8 GB or 16 GB).
+* **Hard Drive / SSD Storage = The Mega Warehouse / Grocery Store:**  
+  It can store massive quantities of goods (1 TB or 10 TB), but retrieving items from it is much slower than grabbing something already on your counter.
+* **The Out-of-Memory (OOM) Crash:**  
+  Occurs when someone attempts to dump an entire 20-ton truck of groceries onto a tiny kitchen counter all at once! The counter collapses.
+* **The Big Data Solution (Chunking & Streaming):**  
+  Instead of dumping everything at once, you bring ingredients to your counter in small, manageable boxes (**chunks** of e.g. 50,000 items), process them, record the summary, clear the counter, and fetch the next box.
+
+---
 
 ```
 +-----------------------------------------------------------------------------------+
@@ -79,7 +104,7 @@ As described by Nathan Marz in *Big Data: Principles and Best Practices of Scala
 
 ## 1.2 The Core Characteristics: The 5 Vs of Big Data
 
-Originally conceptualized by industry analysts as the **3 Vs** (Volume, Velocity, Variety), the definition has evolved in modern data analytics into the **5 Vs**, encompassing data governance and business intelligence.
+Originally conceptualized as the **3 Vs** (Volume, Velocity, Variety), modern enterprise data science evaluates Big Data across **5 core dimensions**:
 
 <p align="center">
   <img src="media/unit1_bigdata_5vs.jpg" alt="The 5 Vs of Big Data Infographic" style="max-width: 95%; border-radius: 8px; box-shadow: 0 4px 14px rgba(0,0,0,0.18);" />
@@ -114,7 +139,9 @@ Big Data rarely conforms to clean rows and columns. It spans three distinct stru
 ### 5. Value (Business Insight & Predictive Utility)
 * **Concept:** The ultimate return on investment (ROI). Raw data has zero inherent economic worth until it is transformed into predictive or descriptive value.
 * **Conversion Pipeline:**  
-  $$\text{Raw Data} \xrightarrow{\text{Cleaning \& Scaling}} \text{Structured Features} \xrightarrow{\text{Machine Learning}} \text{Actionable Decisions}$$
+  `Raw Big Data` ➔ `Cleaning & Scaling` ➔ `Structured Features` ➔ `Machine Learning` ➔ `Actionable Decisions`
+
+<!-- USER IMAGE PLACEHOLDER: Additional custom diagrams can be embedded here -->
 
 ---
 
