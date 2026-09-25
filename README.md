@@ -142,6 +142,8 @@ df.filter(col("status_code") == 200) \
   .orderBy(col("hits").desc()) \
   .show(10)
 ```
+
+👉 **[📖 Read Complete Unit-2 Notes, Diagrams & Practical Lab Manual](2_Lecture_Notes/Unit-2_Big_Data_Processing_using_PySpark.md)**
 </details>
 
 <details open>
@@ -208,17 +210,21 @@ print(result)
 │
 ├── 📂 2_Lecture_Notes/                  # Unit-wise slide decks, markdown summaries & Colab guides
 │   ├── Unit-1_Introduction_to_Big_Data_and_Large_Dataset_Handling.md
+│   ├── Unit-2_Big_Data_Processing_using_PySpark.md
 │   └── Unit-4_Introduction_to_Large_Language_Models_and_Big_Data_Applications.md
 │
 ├── 📂 3_Projects_Presentations/         # Capstone project guidelines, rubrics & student work
-│   └── Unit-1_Lab_Case_Study_Large_Dataset_Optimization.md
+│   ├── Unit-1_Lab_Case_Study_Large_Dataset_Optimization.md
+│   └── Unit-2_PySpark_Distributed_Data_Processing_Lab.md
 │
 ├── 📂 4_Assignments/                    # Problem statements, code deliverables & grading rubrics
 │   ├── Assignment-1_Unit-1_Theory_Assignment.md
+│   ├── Assignment-2_Unit-2_Theory_Assignment.md
 │   └── Assignment-4_Unit-4_Theory_Assignment.md
 │
 ├── 📂 5_QuestionBank/                   # Question bank, MCQs, viva preparation & practical prompts
-│   └── Unit-1_Question_Bank_and_Viva_Voce.md
+│   ├── Unit-1_Question_Bank_and_Viva_Voce.md
+│   └── Unit-2_Question_Bank_and_Viva_Voce.md
 │
 ├── 📂 6_eBooks_ExtraResources/          # Reference guides, cheat sheets, papers & textbook links
 │   └── DECAP456_INTRODUCTION_TO_BIG_DATA.pdf
