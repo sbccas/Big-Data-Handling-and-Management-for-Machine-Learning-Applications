@@ -13,7 +13,7 @@ practical_code: "2611001305033002"
 
 <div align="center">
 
-<img src="assets/social_banner.jpg" alt="DS-505 Big Data & Machine Learning" width="100%" style="border-radius: 12px; margin-bottom: 20px;" />
+<img src="assets/social_banner.jpg" alt="DS-505: Big Data Handling and Management for Machine Learning Applications - Asst. Prof. Hitesh Patel" width="100%" style="border-radius: 12px; margin-bottom: 20px;" />
 
 # ⚡ DS-505: Big Data Handling & Management for Machine Learning
 
