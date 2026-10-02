@@ -202,6 +202,27 @@ print(result)
 
 ---
 
+## ⏱️ University Examination Strategy & 60-Minute Time Budget
+
+To help students maximize their performance and complete the 25-mark examination within the 1-hour time limit:
+
+<p align="center">
+  <img src="assets/60_minute_exam_time_budget.jpg" alt="60-Minute Examination Time Management Strategy" style="max-width: 95%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);" />
+</p>
+
+| Time Window | Section | Target Task | Marks | Strategy |
+| :---: | :---: | :--- | :---: | :--- |
+| **00:00 – 05:00** | **Q.1 A** | 4 Multiple Choice Questions | 04 | Fast recognition (~1.25 mins / MCQ) |
+| **05:00 – 12:00** | **Q.1 B** | 4 Short Definitions (1–2 lines) | 04 | Crisp technical keywords & examples |
+| **12:00 – 26:00** | **Q.2 A** | 1 Detailed Long Question | 05 | Draw neat labeled diagram + bullets |
+| **26:00 – 36:00** | **Q.2 B** | 1 Compulsory Question | 04 | Structured comparison / API syntax |
+| **36:00 – 54:00** | **Q.3** | 2 Short Notes (Any Two) | 08 | 9 mins per note with clean points |
+| **54:00 – 60:00** | **Review** | Final Polish & Underlining | — | Check seat number & question labels |
+
+👉 **[📖 Read Complete University Exam Writing Guide & Answering Secrets](7_Previous_Year_Papers/University_Exam_Writing_Guide_and_Time_Budget.md)**
+
+---
+
 ## 🗂️ Repository Structure Blueprint
 
 ```text
@@ -219,7 +240,8 @@ print(result)
 ├── 📂 3_Projects_Presentations/         # Capstone project guidelines, rubrics & student work
 │   ├── Unit-1_Lab_Case_Study_Large_Dataset_Optimization.md
 │   ├── Unit-2_PySpark_Distributed_Data_Processing_Lab.md
-│   └── Unit-3_Machine_Learning_Data_Preparation_Lab.md
+│   ├── Unit-3_Machine_Learning_Data_Preparation_Lab.md
+│   └── Unit-4_LLM_Text_Processing_and_Pretrained_Models_Lab.md
 │
 ├── 📂 4_Assignments/                    # Problem statements, code deliverables & grading rubrics
 │   ├── Assignment-1_Unit-1_Theory_Assignment.md
@@ -230,12 +252,14 @@ print(result)
 ├── 📂 5_QuestionBank/                   # Question bank, MCQs, viva preparation & practical prompts
 │   ├── Unit-1_Question_Bank_and_Viva_Voce.md
 │   ├── Unit-2_Question_Bank_and_Viva_Voce.md
-│   └── Unit-3_Question_Bank_and_Viva_Voce.md
+│   ├── Unit-3_Question_Bank_and_Viva_Voce.md
+│   └── Unit-4_Question_Bank_and_Viva_Voce.md
 │
 ├── 📂 6_eBooks_ExtraResources/          # Reference guides, cheat sheets, papers & textbook links
 │   └── DECAP456_INTRODUCTION_TO_BIG_DATA.pdf
 │
 └── 📂 7_Previous_Year_Papers/           # University examination papers & QR archives
+    ├── University_Exam_Writing_Guide_and_Time_Budget.md
     └── BCA Old Papers QR.pdf
 ```
 

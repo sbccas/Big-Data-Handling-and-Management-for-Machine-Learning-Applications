@@ -14,3 +14,13 @@ $RECYCLE.BIN/
 
 # Reference samples from other subjects
 *204_ProgrammingSkills*
+*503-02-Major-1*
+
+# Confidential Model Examination Papers
+7_Previous_Year_Papers/*Model_Paper*
+7_Previous_Year_Papers/*model_paper*
+7_Previous_Year_Papers/DS505_Model_*
+
+# Temporary workspace scratch folder
+scratch/
+

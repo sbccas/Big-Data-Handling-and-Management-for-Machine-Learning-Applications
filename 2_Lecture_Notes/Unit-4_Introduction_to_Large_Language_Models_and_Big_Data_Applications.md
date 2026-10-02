@@ -29,12 +29,10 @@
   - [4.4.2 Text Processing using Python: split(), lower(), replace(), count()](#442-text-processing-using-python-split-lower-replace-count)
   - [4.4.3 Integrated Text Processing Pipelines](#443-integrated-text-processing-pipelines)
   - [4.4.4 Live Demonstrations: Hugging Face Transformers](#444-live-demonstrations-hugging-face-transformers)
-- [5. Comprehensive Examination Preparation](#5-comprehensive-examination-preparation)
-  - [5.1 Key Terminology Glossary](#51-key-terminology-glossary)
-  - [5.2 Short-Answer Questions & Model Answers](#52-short-answer-questions--model-answers-2-to-3-marks-each)
-  - [5.3 Long-Answer Questions & Model Theory Answers](#53-long-answer-questions--model-theory-answers-5-to-7-marks-each)
-  - [5.4 Practical Viva Voce & Laboratory Exam Questions](#54-practical-viva-voce--laboratory-exam-questions)
-- [6. Student Assignment & Lab Worksheet](#6-student-assignment--lab-worksheet)
+- [5. Practical Projects, Assignments & University Exam Resources](#5-practical-projects-assignments--university-exam-resources)
+  - [5.1 Hands-on Practical Project & Guided Lab](#51-hands-on-practical-project--guided-lab)
+  - [5.2 Theory Assignment 4 & Continuous Evaluation](#52-theory-assignment-4--continuous-evaluation)
+  - [5.3 University Examination Vault, Technical Glossary & Viva Voce](#53-university-examination-vault-technical-glossary--viva-voce)
 
 </details>
 
@@ -1242,6 +1240,11 @@ The main advantage of pretrained models is that we can use an already-trained mo
 <a id="44-practical-implementation-and-functions"></a>
 ## 4.4 Practical Implementation & Functions
 
+> [!TIP]
+> **🔬 Dedicated Practical Laboratory Manual:**  
+> For the complete end-to-end executable Python laboratory pipeline, string normalization algorithms, vocabulary frequency distribution, and live Hugging Face pipeline demonstrations, refer to the isolated practical document:  
+> 👉 [**`3_Projects_Presentations/Unit-4_LLM_Text_Processing_and_Pretrained_Models_Lab.md`**](../3_Projects_Presentations/Unit-4_LLM_Text_Processing_and_Pretrained_Models_Lab.md)
+
 <a id="441-installation-of-transformers"></a>
 ### 4.4.1 Installation of Transformers
 
@@ -1729,95 +1732,36 @@ print(generation_output[0]['generated_text'])
 
 ```
 
-<a id="5-comprehensive-examination-preparation"></a>
-## 5. Comprehensive Examination Preparation
+<a id="5-practical-projects-assignments--university-exam-resources"></a>
+# 5. Practical Projects, Assignments & University Exam Resources
 
-<a id="51-key-terminology-glossary"></a>
-### 5.1 Key Terminology Glossary
+To complete your preparation for Unit 4 and master both hands-on practical implementations and university theory examinations, explore the accompanying modular resources across our repository:
 
-| Term | Exact Technical Definition |
-| --- | --- |
-| LLM | Large Language Model; deep learning systems trained on massive corpora to model and generate human language. |
-| NLP | Natural Language Processing; the branch of AI concerned with enabling machines to understand, interpret, and generate text. |
-| Token | The atomic unit of text (word, subword, or character) handled by a language model's tokenizer. |
-| Tokenization | The process of parsing raw unstructured strings into sequences of discrete numerical token IDs. |
-| Text Cleaning | Removing noise, punctuation, markup tags, and anomalies to standardize inputs for modeling. |
-| Pretrained Model | A model whose weights have already been optimized on massive datasets via self-supervised pretraining. |
-| API | Application Programming Interface; standard protocols and endpoints facilitating client-server interactions. |
-| Abstractive Summarization | Paraphrasing and generating concise new text expressing the key ideas of a longer document. |
-| Extractive Summarization | Selecting and extracting existing sentences directly from a source text based on importance scoring. |
-| Hugging Face | A central platform and software ecosystem providing models, datasets, and utilities for NLP and ML. |
-| Transformers | The Python library implementing Transformer-based architectures with standard APIs. |
-| Hallucination | When an LLM generates plausibly phrased but factually inaccurate or unsubstantiated text. |
+<a id="51-hands-on-practical-project--guided-lab"></a>
+### 🔬 5.1 Hands-on Practical Project & Guided Lab
+* **Project Document:** [`3_Projects_Presentations/Unit-4_LLM_Text_Processing_and_Pretrained_Models_Lab.md`](../3_Projects_Presentations/Unit-4_LLM_Text_Processing_and_Pretrained_Models_Lab.md)
+* **Focus:** Complete, self-contained Python laboratory manual covering string primitives (`split()`, `lower()`, `replace()`, `count()`), multi-stage cleaning pipelines, vocabulary frequency analysis, and live Hugging Face pipelines (`pipeline("sentiment-analysis")`, `pipeline("summarization")`, and `pipeline("text-generation")` with GPT-2 hyperparameter tuning).
 
-<a id="52-short-answer-questions--model-answers-2-to-3-marks-each"></a>
-<a id="52-short-answer-questions--model-answers"></a>
-### 5.2 Short-Answer Questions & Model Answers (2 to 3 Marks Each)
+<a id="52-theory-assignment-4--continuous-evaluation"></a>
+### 📝 5.2 Theory Assignment 4 & Continuous Evaluation
+* **Assignment Document:** [`4_Assignments/Assignment-4_Unit-4_Theory_Assignment.md`](../4_Assignments/Assignment-4_Unit-4_Theory_Assignment.md)
+* **Focus:** Official college assignment strictly formatted to the SBCCAS continuous assessment rubric:
+  * **Section I:** 5 Detailed Long Questions (7 Marks each)
+  * **Section II:** 5 Focused Short Questions (3 Marks each)
+  * **Section III:** 7 Multiple Choice Questions (MCQs) with Answer Keys and Technical Justifications.
 
-#### ❓ Q1: What is a Large Language Model (LLM)?
+<a id="53-university-examination-vault-technical-glossary--viva-voce"></a>
+### 🏛️ 5.3 University Examination Vault, Technical Glossary & Viva Voce
+* **Question Bank Document:** [`5_QuestionBank/Unit-4_Question_Bank_and_Viva_Voce.md`](../5_QuestionBank/Unit-4_Question_Bank_and_Viva_Voce.md)
+* **Focus:** 15 High-yield technical definitions, short answer questions with model answers (2 to 3 marks), long answer comprehensive questions with structural outlines (5 to 7 marks), and 15 practical viva voce questions with model answers.
 
-#### ❓ Q2: What is the functional difference between split() and tokenization?
+---
 
-#### ❓ Q3: Differentiate between Extractive and Abstractive Summarization.
+<div align="center">
 
-#### ❓ Q4: What does the temperature parameter control in text generation APIs?
+Made with 💙 for the **B.Sc. Data Science & Analytics** Students  
+**Sutex Bank College of Computer Applications and Science (SBCCAS)**  
+*Veer Narmad South Gujarat University (VNSGU), Surat*
 
-#### ❓ Q5: Why is lower() commonly used in text cleaning pipelines?
+</div>
 
-<a id="53-long-answer-questions--model-theory-answers-5-to-7-marks-each"></a>
-<a id="53-long-answer-questions--model-theory-answers"></a>
-### 5.3 Long-Answer Questions & Model Theory Answers (5 to 7 Marks Each)
-
-#### ❓ Q1: Explain the relationship between Big Data and Large Language Models. Why are large datasets essential for LLM training?
-
-#### ❓ Q2: Discuss major ethical concerns associated with Large Language Models and AI systems. Provide an illustrative scenario for algorithmic bias.
-
-<a id="54-practical-viva-voce--laboratory-exam-questions"></a>
-### 5.4 Practical Viva Voce & Laboratory Exam Questions
-
-#### ❓ Q: What is the return type of the Python string .split() function?
-A: It returns a Python list of strings.
-
-#### ❓ Q: If text = "Data Science", what is the output of text.replace("Science", "Analytics")?
-A: "Data Analytics".
-
-#### ❓ Q: Does string.lower() modify the original string in place?
-A: No. Python strings are immutable; lower() returns a new string copy.
-
-#### ❓ Q: How do you determine the total number of words in a space-separated string s using basic Python?
-A: len(s.split()).
-
-#### ❓ Q: What command installs the Hugging Face transformers package in a Jupyter notebook?
-A: !pip install transformers.
-
-#### ❓ Q: What is the primary role of the Hugging Face pipeline function?
-A: It abstracts the end-to-end NLP workflow, combining tokenization, model inference, and output decoding into a single callable object.
-
-#### ❓ Q: Why do modern LLMs use subword tokenization (like BPE) instead of traditional whitespace split()?
-A: Subword tokenization limits vocabulary size while avoiding out-of-vocabulary (OOV) errors by decomposing rare or unseen words into known subword fragments.
-
-#### ❓ 🔹 Q: What is the difference between greedy decoding and nucleus sampling in text generation?
-A: Greedy decoding always picks the single highest-probability token (deterministic and prone to loops), whereas nucleus (top-) sampling dynamically samples from candidates whose cumulative probability reaches threshold .
-
-<a id="6-student-assignment--lab-worksheet"></a>
-## 6. Student Assignment & Lab Worksheet
-
-Theoretical Assignment Tasks
-
-#### ❓ 🔹 Assignment Task 1: Draw and explain the architectural block diagram of the basic LLM life-cycle: Data Collection  Cleaning  Pre-training  Fine-Tuning  Inference.
-
-#### ❓ Assignment Task 2: Compare and contrast the capabilities and trade-offs of rule-based conversational agents versus LLM-powered conversational agents.
-
-#### ❓ Assignment Task 3: Explain three real-world risks associated with AI hallucinations in healthcare and financial domains.
-
-Practical Lab Programming Tasks
-
-#### ❓ Lab Task 1: Write a Python program that accepts a multi-line paragraph, normalizes all words to lowercase, strips periods (.), commas (,), and exclamation marks (!), splits the text into tokens, and displays the top 3 most frequent tokens along with their counts.
-
-#### ❓ Lab Task 2: Given the string raw_log = "ERROR: Connection reset by peer! [Module: Ingestion]", write Python statements using replace() and split() to extract only the error message text (Connection reset by peer).
-
-#### ❓ Lab Task 3: In Google Colab, import the transformers library, load the "sentiment-analysis" pipeline, and evaluate the sentiment of the following two sentences:
-
-"Handling large text datasets with PySpark and Transformers is efficient and rewarding."
-
-"The server crashed repeatedly due to poor memory optimization."
