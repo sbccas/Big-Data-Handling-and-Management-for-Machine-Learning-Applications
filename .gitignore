@@ -11,6 +11,9 @@ $RECYCLE.BIN/
 *.tmp
 *.docx
 *.doc
+!4_Assignments/DS505_Practical_List_Index.docx
+!4_Assignments/DS505_Practical_Assignment_Workbook.docx
+
 
 # Reference samples from other subjects
 *204_ProgrammingSkills*

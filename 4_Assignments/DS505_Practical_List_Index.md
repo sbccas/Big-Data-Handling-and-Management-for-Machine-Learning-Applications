@@ -1,0 +1,36 @@
+# 📋 DS-505: Practical Examination & Assignment List
+
+> **Course Code:** DS-505 | **Subject:** Big Data Handling and Management for Machine Learning Applications  
+> **Course Degree:** B.Sc. (Data Science & Analytics) — Semester V  
+> **Institution:** Sutex Bank College of Computer Applications and Science (SBCCAS), Amroli  
+> **Format:** Exactly 4 Practicals per Unit (Total: 16 Practicals)  
+
+---
+
+## 📑 Master Practical Index Table
+
+| Sr. No. | Unit | Practical Exercise Title & Problem Statement | Complexity |
+| :---: | :---: | :--- | :---: |
+| **01** | Unit 1 | **Dataset Ingestion, Inspection & Descriptive Statistics with Pandas**<br>Write a Python program using Pandas to load a structured dataset (CSV/JSON), display its first 5 rows, last 5 rows, dimensions (shape), column names, and data types with info(). Generate comprehensive summary statistics of all numeric and categorical attributes using describe(include='all'). | Medium |
+| **02** | Unit 1 | **Data Hygiene: Missing Value Imputation, Deduplication & Renaming**<br>Write a Python program to perform data hygiene on a dataset with missing values and duplicate rows. Identify missing entries using isna().sum(), demonstrate both dropping rows (dropna()) and imputing missing numerical values with fillna(mean/median), remove duplicate records using drop_duplicates(), and rename columns using rename(). | Medium |
+| **03** | Unit 1 | **In-Memory Optimization via Dtype Downcasting & Deep Profiling**<br>Write a Python program to demonstrate in-memory optimization of large datasets. Profile baseline memory usage using memory_usage(deep=True), downcast integer columns (int64 -> int32/int16), downcast float columns (float64 -> float32), and convert repetitive string columns to category type. Report the total percentage reduction in RAM footprint. | Medium |
+| **04** | Unit 1 | **Out-of-Core Batch Ingestion & Aggregation via Chunking**<br>Write a Python program to ingest a large CSV file exceeding single-process RAM in batches using the chunksize parameter of pd.read_csv(). Calculate the cumulative record count, running sum of transaction amounts, and overall average transaction value across all chunks to prevent Out-Of-Memory (OOM) crashes. | Medium |
+| **05** | Unit 2 | **Apache Spark Session Initialization & DataFrame Schema Inspection**<br>Write a Python program to install and initialize an Apache Spark session in PySpark using SparkSession.builder. Create a structured PySpark DataFrame from Python dictionaries, display its schema tree hierarchy using printSchema(), and print its rows using .show(). | Medium |
+| **06** | Unit 2 | **PySpark DataFrame Transformations: Selection, Filtering & Columns**<br>Write a PySpark program to execute DataFrame transformations: select specific columns using .select(), filter rows using multi-condition boolean logic (e.g., Salary > 60000 and City == 'Surat') using .filter(), create a computed column using .withColumn(), and rename a column using .withColumnRenamed(). | Medium |
+| **07** | Unit 2 | **Grouped Aggregations & Action Execution in PySpark**<br>Write a PySpark program to perform grouped aggregations and action executions. Group data by Department using .groupBy(), calculate aggregate metrics (count, average salary, maximum salary, total salary) using pyspark.sql.functions, sort records using .orderBy(), and execute actions (.count(), .show()). | Medium |
+| **08** | Unit 2 | **Columnar Storage with Apache Parquet Format in PySpark**<br>Write a PySpark program to demonstrate high-performance columnar storage using Apache Parquet. Create a PySpark DataFrame, export it to Parquet format using .write.mode('overwrite').parquet(), reload the Parquet file using spark.read.parquet(), and verify schema preservation and row counts. | Medium |
+| **09** | Unit 3 | **Missing Value Imputation with SimpleImputer & Categorical Encoding**<br>Write a Python program using Scikit-Learn to preprocess a machine learning dataset: handle missing numerical values using SimpleImputer with the mean strategy, transform categorical text labels into ordinal integers using LabelEncoder, and convert nominal variables to binary dummy indicators using One-Hot Encoding. | Medium |
+| **10** | Unit 3 | **Feature Scaling (StandardScaler vs MinMaxScaler) & Train-Test Split**<br>Write a Python program to perform feature scaling and dataset partitioning. Apply StandardScaler (Z-score normalization) and MinMaxScaler to numerical features, compare their transformed distributions, and split the dataset into training (80%) and testing (20%) sets using train_test_split(..., test_size=0.2, random_state=42). | Medium |
+| **11** | Unit 3 | **Continuous Predictive Modeling with Linear Regression**<br>Write a Python program to build, train, and evaluate a Linear Regression model using Scikit-Learn. Fit the model to predict salary based on years of experience, display model coefficients (slope and intercept), predict outcomes on the test dataset, and calculate Mean Squared Error (MSE) and R-squared (R2) score. | Medium |
+| **12** | Unit 3 | **Classification with Decision Trees & K-Nearest Neighbors (KNN)**<br>Write a Python program to build and compare two classification models: DecisionTreeClassifier and KNeighborsClassifier (KNN) using Scikit-Learn. Train both models on a classification dataset, evaluate test predictions, and compare their performance using Confusion Matrix and Accuracy Score. | Medium |
+| **13** | Unit 4 | **Text Data Cleaning & Custom Tokenization using Python**<br>Write a Python program to clean raw, noisy text data: convert characters to lowercase using lower(), remove special punctuation symbols using replace(), eliminate redundant whitespace using strip(), and tokenize sentences into individual word tokens using split(). | Medium |
+| **14** | Unit 4 | **Vocabulary Frequency Profiling & Stopword Filtering**<br>Write a Python program to profile vocabulary in a text corpus: clean sentences, filter out common English stopwords (e.g., 'the', 'is', 'in', 'and'), calculate word occurrence frequencies using collections.Counter, and display the top 5 most frequent keywords. | Medium |
+| **15** | Unit 4 | **Pretrained Sentiment Analysis with Hugging Face Transformers**<br>Write a Python program to perform Sentiment Analysis using the Hugging Face Transformers library. Initialize a pretrained sentiment-analysis pipeline (pipeline('sentiment-analysis')), classify multiple user review statements into POSITIVE or NEGATIVE sentiment labels, and display the confidence prediction scores. | Medium |
+| **16** | Unit 4 | **Automated Text Summarization using Pretrained LLM Pipeline**<br>Write a Python program to perform automated text summarization using a Hugging Face pretrained transformer model. Initialize the pipeline('summarization'), pass a multi-sentence news or technical article, specify max_length and min_length parameters, and generate a concise abstractive summary. | Medium |
+
+---
+
+## 📦 Downloads
+
+- 📄 **[DS505_Practical_List_Index.docx](DS505_Practical_List_Index.docx)** — Single-page official Index Table ready for print / journal front matter.
+- 📘 **[DS505_Practical_Assignment_Workbook.docx](DS505_Practical_Assignment_Workbook.docx)** — Complete workbook with code, expected outputs, and submission placeholders.
